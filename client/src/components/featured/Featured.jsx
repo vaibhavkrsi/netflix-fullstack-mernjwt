@@ -1,13 +1,44 @@
+import React, { useEffect, useState } from "react";
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import "./featured.scss";
+import axios from "axios";
 
-const Featured = ({ type }) => {
+const Featured = ({ type, setGenre }) => {
+  const [content, setContent] = useState({});
+
+  useEffect(() => {
+    const getRandomContent = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:8080/api/movies/random?type=${type}`,
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJhZWY2ZjI4MTFhMWU0MWVkZTVlNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyNTE0NTU5OCwiZXhwIjoxNzI1NTc3NTk4fQ.ttRfXtTZldsFQw8MLWFDvLCwkSLJQcs0vn6-9cZ-mxY",
+            },
+          }
+        );
+        setContent(res.data[0]);
+        console.log(content);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getRandomContent();
+  }, [type]);
+
+  console.log("Type:", type);
+
   return (
     <div className="featured">
       {type && (
         <div className="category">
           <span>{type === "movie" ? "Movies" : "Series"}</span>
-          <select name="genre" id="genre">
+          <select
+            name="genre"
+            id="genre"
+            onChange={(e) => setGenre(e.target.value)}
+          >
             <option>Genre</option>
             <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
@@ -25,19 +56,10 @@ const Featured = ({ type }) => {
           </select>
         </div>
       )}
-      <img
-        src="https://images.pexels.com/photos/1388069/pexels-photo-1388069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        alt=""
-      />
+      <img src={content.img} alt="" />
       <div className="info">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Naruto_logo.svg"
-          alt=""
-        />
-        <span className="desc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ipsam,
-          repellendus dolores consequuntur explicabo quis.
-        </span>
+        <img src={content.imgSm} alt="" />
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayArrow />

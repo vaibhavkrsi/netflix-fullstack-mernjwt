@@ -2,11 +2,12 @@ import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
 } from "@material-ui/icons";
-import Listitems from "../listitems/Listitems";
+import ListItem from "../listitems/Listitems"; // Ensure correct import path
 import "./list.scss";
 import { useRef, useState } from "react";
+import React from "react";
 
-export default function List() {
+export default function List({ list }) {
   const listRef = useRef();
   const [slideNumber, setslideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
@@ -23,9 +24,10 @@ export default function List() {
       listRef.current.style.transform = `translate(${-230 + distance}px)`;
     }
   };
+
   return (
     <div className="list">
-      <span className="listTitle">Continue to watch</span>
+      <span className="listTitle">{list.title}</span>
       <div className="wrapper">
         <ArrowBackIosOutlined
           className="sliderArrow left"
@@ -33,16 +35,9 @@ export default function List() {
           style={{ display: !isMoved && "none" }}
         />
         <div className="container" ref={listRef}>
-          <Listitems index={0} />
-          <Listitems index={1} />
-          <Listitems index={2} />
-          <Listitems index={3} />
-          <Listitems index={4} />
-          <Listitems index={5} />
-          <Listitems index={6} />
-          <Listitems index={7} />
-          <Listitems index={8} />
-          <Listitems index={9} />
+          {list.content.map((item, i) => (
+            <ListItem key={i} index={i} item={item} />
+          ))}
         </div>
         <ArrowForwardIosOutlined
           className="sliderArrow right"
