@@ -40,7 +40,6 @@
 <ul>
     <li>User Authentication with JWT Tokens</li>
     <li>Admin Dashboard for managing content</li>
-    <li>Responsive and dynamic frontend</li>
     <li>API for handling data and business logic</li>
     <li>Unit and Integration Testing with JEST</li>
 </ul>
