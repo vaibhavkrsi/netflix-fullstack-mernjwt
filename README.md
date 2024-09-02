@@ -45,9 +45,7 @@
     <li>Unit and Integration Testing with JEST</li>
 </ul>
 
-<h2>Screenshots</h2>
-<p>Include screenshots here to show what your app looks like.</p>
-<img width="457" alt="image" src="https://github.com/user-attachments/assets/7b63249f-9fe7-4887-9198-c871b44b42d6">
+
 
 
 <h2>License</h2>
