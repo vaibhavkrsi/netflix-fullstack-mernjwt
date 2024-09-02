@@ -33,7 +33,7 @@
 <ol>
     <li>Clone the repository to your local machine.</li>
     <li>Install the necessary dependencies for each part of the project (client, admin, and API).</li>
-    <li>Start each server using the appropriate commands (e.g., <code>npm start</code>).</li>
+    <li>Start each server using the appropriate commands (e.g., <code>yarn start</code>).</li>
 </ol>
 
 <h2>Features</h2>
