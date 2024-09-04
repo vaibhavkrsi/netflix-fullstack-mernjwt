@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "fbf6adc1-5d3c-44a3-9427-2cd2381775e6",
+		"name": "netflix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26892620"
+	},
+	"item": [
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJhZWY2ZjI4MTFhMWU0MWVkZTVlNiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MTU2ODg4NjgsImV4cCI6MTcxNjEyMDg2OH0.X5y11hutK10nms2SJU57JREGam1EIKqH5TMgYzIBxE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZG9jdG9yIiwidXNlcklkIjoiMmRiMjRhZGYtMWJjNi00MGNlLTgzODgtNzNiODk5MjY1NzQwIiwiaWF0IjoxNzExMDUwNzEwLCJleHAiOjE3MTM2NDI3MTB9.1KimXMz4oC_cePfV00wANmLxIIzWTA9CEhcbtk6Trwo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"vsinghh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/661baef6f2811a1e41ede5e6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"661baef6f2811a1e41ede5e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"vsingh@dev.com\",\r\n    \"username\":\"vsingh\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var BASE_URL=\"http://reqres.in\";//local variable\r",
+							"pm.globals.set(\"BASE_URL\",BASE_URL);//creating environment\r",
+							"pm.collectionVariables.set(\"BASE_URL\",BASE_URL);//setting environment"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJhZWY2ZjI4MTFhMWU0MWVkZTVlNiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3MTU2ODg4NjgsImV4cCI6MTcxNjEyMDg2OH0.X5y11hutK10nms2SJU57JREGam1EIKqH5TMgYzIBxE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"vsingh12@dev.com\",\r\n    \"username\":\"vsingh12\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "new movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJhZWY2ZjI4MTFhMWU0MWVkZTVlNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxNzM1NDQ5NCwiZXhwIjoxNzE3Nzg2NDk0fQ.gv7xCCN8fNNwvQdLD3FOq3pvZPlogeLWgNWjdbrkXHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"superman\",\r\n    \"desc\":\"Superman is a bullshit movie in which people can't recognize a man without sunglasses\",\r\n    \"img\":\"https://images.pexels.com/photos/1388069/pexels-photo-1388069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2\",\r\n    \"imgSm\":\"https://images.pexels.com/photos/1388069/pexels-photo-1388069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2\",\r\n    \"imgTitle\":\"Superman\",\r\n    \"trailer\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\",\r\n    \"video\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\",\r\n    \"year\":\"2024\",\r\n    \"limit\":\"16\",\r\n    \"genre\":\"comedy, action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/movie",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWJhZWY2ZjI4MTFhMWU0MWVkZTVlNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxNzM1NDQ5NCwiZXhwIjoxNzE3Nzg2NDk0fQ.gv7xCCN8fNNwvQdLD3FOq3pvZPlogeLWgNWjdbrkXHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Amazing Movies\",\r\n    \"type\":\"movies\",\r\n    \"genre\":\"comedy\",\r\n    \"content\": [\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\",\r\n    \"665cc734d3d2bfe2ebb95bb0\"\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/lists",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": ""
+		}
+	]
+}
